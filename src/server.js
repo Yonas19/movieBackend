@@ -1,15 +1,14 @@
 import express from "express";
+import { config } from "dotenv";
 
 import movieRoutes from "./routes/movieRoutes.js";
+
 const app = express();
 
 // API route
-app.use("/movies", movi);
+app.use("/movies", movieRoutes);
 
 
-app.get("/hello", (req, res) => {
-  res.json({ message: "Hello World" });
-});
 
 const PORT = 5001;
 app.listen(PORT, () => {
